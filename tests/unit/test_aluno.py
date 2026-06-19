@@ -83,6 +83,10 @@ def test_contar_aprovados_com_lista_vazia():
 
 # Requisito 2 — situacao_final(total_aulas) -> str
 # Escreva os testes ANTES de implementar o método
+def test_situacao_final_reprova_por_falta_acima_de_25_por_cento():
+    aluno = Aluno(nome="Ana", notas=[8, 8, 8, 8], faltas=6)
+
+    assert aluno.situacao_final(total_aulas=20) == "Reprovado por falta"
 
 
 # Requisito 3 — enviar_boletim(email_service)
