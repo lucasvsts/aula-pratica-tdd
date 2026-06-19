@@ -27,6 +27,12 @@ def test_menor_nota_deve_retornar_menor_valor():
     assert aluno.menor_nota() == 5
 
 
+def test_calcular_media_arredondada_deve_arredondar_para_inteiro_mais_proximo():
+    aluno = Aluno(nome="Daniel", notas=[7, 8, 8], faltas=0)
+
+    assert aluno.calcular_media_arredondada() == 8
+
+
 # =============================================================
 # PARTE 2 — Implemente com TDD
 # Siga o ciclo: 🔴 escreva o teste → 🟢 implemente → 🟡 refatore
