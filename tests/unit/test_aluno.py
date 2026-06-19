@@ -123,3 +123,12 @@ def test_enviar_boletim_chama_servico_para_aluno_reprovado():
     aluno.enviar_boletim(email_service)
 
     email_service.enviar.assert_called_once_with("Carlos", 5)
+
+
+def test_enviar_boletim_nao_chama_servico_para_aluno_aprovado():
+    aluno = Aluno(nome="Ana", notas=[8, 8, 8, 8], faltas=0)
+    email_service = MagicMock()
+
+    aluno.enviar_boletim(email_service)
+
+    email_service.enviar.assert_not_called()
