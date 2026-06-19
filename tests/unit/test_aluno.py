@@ -1,6 +1,7 @@
 import pytest
 from unittest.mock import MagicMock
 from aluno.aluno import Aluno
+from aluno.aluno import contar_aprovados
 
 
 # =============================================================
@@ -46,6 +47,13 @@ def test_calcular_media_arredondada_deve_arredondar_para_inteiro_mais_proximo():
 
 # Requisito 1 — contar_aprovados(lista_de_alunos) -> int
 # Escreva os testes ANTES de implementar a função
+def test_contar_aprovados_com_todos_aprovados():
+    alunos = [
+        Aluno(nome="Ana", notas=[8, 8, 8, 8], faltas=0),
+        Aluno(nome="Bruno", notas=[7, 7, 7, 7], faltas=0),
+    ]
+
+    assert contar_aprovados(alunos) == 2
 
 
 # Requisito 2 — situacao_final(total_aulas) -> str
