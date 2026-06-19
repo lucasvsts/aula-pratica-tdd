@@ -21,6 +21,12 @@ def test_situacao_deve_aprovar_media_seis():
     assert aluno.situacao() == "Aprovado"
 
 
+def test_situacao_deve_reprovar_media_menor_que_seis():
+    aluno = Aluno(nome="Eduardo", notas=[5, 5, 5, 5], faltas=0)
+
+    assert aluno.situacao() == "Reprovado"
+
+
 def test_menor_nota_deve_retornar_menor_valor():
     aluno = Aluno(nome="Beatriz", notas=[8, 5, 10, 7], faltas=0)
 
