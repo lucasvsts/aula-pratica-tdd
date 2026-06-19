@@ -56,6 +56,15 @@ def test_contar_aprovados_com_todos_aprovados():
     assert contar_aprovados(alunos) == 2
 
 
+def test_contar_aprovados_com_todos_reprovados():
+    alunos = [
+        Aluno(nome="Carlos", notas=[5, 5, 5, 5], faltas=0),
+        Aluno(nome="Daniel", notas=[4, 4, 4, 4], faltas=0),
+    ]
+
+    assert contar_aprovados(alunos) == 0
+
+
 # Requisito 2 — situacao_final(total_aulas) -> str
 # Escreva os testes ANTES de implementar o método
 
