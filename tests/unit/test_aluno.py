@@ -9,6 +9,11 @@ from aluno.aluno import Aluno
 # =============================================================
 
 #
+def test_calcular_media():
+    aluno = Aluno(nome="Ana", notas=[10, 8], faltas=0)
+
+    assert aluno.calcular_media() == 9
+
 
 # =============================================================
 # PARTE 2 — Implemente com TDD
